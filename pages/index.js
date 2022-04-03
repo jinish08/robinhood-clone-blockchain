@@ -1,5 +1,10 @@
 import { BiDotsHorizontalRounded } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
+import Header from "../components/Header";
+import BuyTokens from "../components/BuyTokens";
+import Notice from "../components/Notice";
+import Assets from "../components/Assets";
+import PortfolioChart from "../components/PortfolioChart";
 
 const styles = {
   wrapper: "w-screen h-screen flex flex-col",
@@ -11,7 +16,8 @@ const styles = {
   pastHour: "text-gray-400",
   chartContainer:
     "text-5xl flex justify-center w-full h-1/3 text-white mt-11 mb-11",
-  buyingPowerContainer: "w-full border-t mb-24 border-b h-16 border-[#30363b] flex justify-between item",
+  buyingPowerContainer:
+    "w-full border-t mb-24 border-b h-16 border-[#30363b] flex justify-between item",
   buyingPowerTitle: "text-white font-bolder text-lg",
   buyingPowerAmount: "text-white font-bolder text-xl",
   notice: "flex border border-[#30363b] mx-11 my-4 p-5 flex-col flex-1",
@@ -19,7 +25,8 @@ const styles = {
   noticeTitle: "text-gray-500",
   noticeMessage: "text-white font-bold",
   noticeCTA: "font-bold text-green-500 cursor-pointer mt-5",
-  rightMain: "flex flex-col flex-1  h-4/5 bg-[#1E2123] mt-6 rounded-lg overflow-y-scroll noScroll",
+  rightMain:
+    "flex flex-col flex-1  h-4/5 bg-[#1E2123] mt-6 rounded-lg overflow-y-scroll noScroll",
   rightMainItem: "flex items-center text-white p-5 border-b border-[#30363b]",
   ItemTitle: "flex-1 font-bold",
   moreOptions: "cursor-pointer text-xl",
@@ -28,7 +35,7 @@ const styles = {
 export default function Home() {
   return (
     <div className={styles.wrapper}>
-      {/* <Header /> */}
+      <Header />
       <div className={styles.mainContainer}>
         <div className={styles.leftMain}>
           <div className={styles.portfolioAmountContainer}>
@@ -40,8 +47,7 @@ export default function Home() {
             </div>{" "}
           </div>
           <div className={styles.chartContainer}>
-            {" "}
-            {/* <PortfolioChart /> */}
+            <PortfolioChart />
           </div>
           <div className={styles.buyingPowerContainer}>
             {" "}
@@ -54,17 +60,20 @@ export default function Home() {
               <div className={styles.noticeMessage}>
                 Transfer funds to your account to start trading.
               </div>
-              {/* <BuyTokens /> */}
+              <BuyTokens />
             </div>
           </div>
-          {/* <Notice/> */}
+          <Notice />
         </div>
         <div className={styles.rightMain}>
           <div className={styles.rightMainItem}>
             <div className={styles.ItemTitle}>Crypto Currencies</div>
             <BiDotsHorizontalRounded className={styles.moreOptions} />
           </div>
-          {/* <Asset/> */}
+          <Assets coin={"BTC"} price={0.89} />
+          <Assets coin={"SOL"} price={-1} />
+          <Assets coin={"ETH"} price={9} />
+          <Assets coin={"USDC"} price={89} />
           <div className={styles.rightMainItem}>
             <div className={styles.ItemTitle}>Lists</div>
             <AiOutlinePlus className={styles.moreOptions} />
